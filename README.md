@@ -12,7 +12,7 @@ The project allows for:
 
 ---
 
-## 📁 Functions Structure
+## Functions Structure
 
 ```
 .
@@ -40,11 +40,11 @@ pip install torch numpy
 
 ---
 
-## 🚀 How to Use
+## How to Use
 
 Since the code is modular, you can **run different parts** by commenting/uncommenting blocks.
 
-### 🔁 Train the Agent
+### Train the Agent
 
 Runs self-play games, trains a CNN on the generated data, and saves models over several iterations.
 
@@ -64,7 +64,7 @@ This will:
 
 ---
 
-### 🧠 Evaluate Agents (ELO Comparison)
+### Evaluate Agents (ELO Comparison)
 
 Compare a new trained agent against an old one using a tournament of 50 games.
 
@@ -76,7 +76,7 @@ Each agent plays both Red and Blue alternately, and ELO is updated per game.
 
 ---
 
-### 🎮 Play the Game
+### Play the Game
 
 Human vs AI, AI vs AI, or Human vs Human.
 
@@ -108,7 +108,7 @@ Enter your move (row col): 2 3
 
 ---
 
-## 📊 ELO Rating System
+## ELO Rating System
 
 A simple Elo rating system is used to track performance between model versions.
 
@@ -121,7 +121,7 @@ Where `result = 1` for win, `0` for loss, and `0.5` for draw.
 
 ---
 
-## 🧪 Example Outputs
+## Example Outputs
 
 ```
 Training Iteration 1/5
@@ -136,49 +136,49 @@ Final ELO Ratings - New Agent: 1554.2, Old Agent: 1445.8
 
 ---
 
-## 📘 Components Explained
+## Components Explained
 
-### ✅ `SnortGame`
+### `SnortGame`
 
 * Core game engine.
 * Manages board state, turns, legal moves, and end conditions.
 * Functions: `make_move`, `unmake_move`, `legal_moves`, `encode`, `decode`, `play()`
 
-### 🧠 `MCTSPlayer`
+### `MCTSPlayer`
 
 * Pure MCTS agent with simulated playouts.
 * Uses visit count to choose moves.
 
-### 🔮 `PUCTPlayer`
+### `PUCTPlayer`
 
 * MCTS guided by a neural network.
 * Uses AlphaZero-style PUCT with Dirichlet noise for exploration.
 
-### 🧠 `CNNGameNetwork`
+### `CNNGameNetwork`
 
 * PyTorch CNN.
 * Inputs: 4-channel encoded board (R, B, X, Player).
 * Outputs: `value` ∈ \[-1,1], `policy` ∈ \[0,1]^25.
 
-### 🔁 `generate_self_play_games()` / `generate_puct_self_play_games()`
+### `generate_self_play_games()` / `generate_puct_self_play_games()`
 
 * Simulate games with MCTS/PUCT.
 * Record `(state, policy, value)` at each move.
 
-### 🏋️‍♂️ `train_neural_network()`
+### 🏋️‍♂`train_neural_network()`
 
 * Trains the CNN from self-play data.
 * Loss: MSE + CrossEntropy
 * Optimizer: Adam
 
-### 🧪 `evaluate_agents()`
+### `evaluate_agents()`
 
 * Plays games between two agents.
 * Calculates ELO updates.
 
 ---
 
-## 🧹 About Snort
+## About Snort
 
 Snort is a two-player combinatorial game played on a graph. In this simplified version:
 
@@ -188,19 +188,16 @@ Snort is a two-player combinatorial game played on a graph. In this simplified v
 
 ---
 
-## 📌 Notes
+##  Notes
 
 * The current setup uses manual commenting to toggle between training, evaluation, and play. You can replace this with a menu for cleaner workflow.
 * Model files (`.pth`) will be generated automatically during training.
 
 ---
 
-## 📜 License
-
-MIT License (or specify your own)
 
 ---
 
-## 👌 Acknowledgments
+## Acknowledgments
 
-Inspired by AlphaZero-style reinforcement learning for board games.
+AlphaZero-style reinforcement learning for board games.
