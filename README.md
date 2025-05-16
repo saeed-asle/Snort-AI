@@ -30,7 +30,7 @@ The project allows for:
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 Install the required Python packages:
 
