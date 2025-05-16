@@ -38,8 +38,6 @@ Install the required Python packages:
 pip install torch numpy
 ```
 
-If your game uses additional dependencies (e.g., matplotlib for visualization), include them in `requirements.txt`.
-
 ---
 
 ## 🚀 How to Use
