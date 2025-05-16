@@ -98,7 +98,7 @@ Enter your move (row col): 2 3
 
 ---
 
-## 🧠 Training Details
+## Training Details
 
 * **Network**: Convolutional neural network (CNN) to evaluate board states
 * **Training Data**: Generated through self-play using PUCT
@@ -165,7 +165,7 @@ Final ELO Ratings - New Agent: 1554.2, Old Agent: 1445.8
 * Simulate games with MCTS/PUCT.
 * Record `(state, policy, value)` at each move.
 
-### 🏋️‍♂`train_neural_network()`
+### `train_neural_network()`
 
 * Trains the CNN from self-play data.
 * Loss: MSE + CrossEntropy
